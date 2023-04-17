@@ -53,7 +53,7 @@ def check_tokens():
 
 
 def send_message(bot, message):
-    """Отправляет сообщения в телеграмм"""
+    """Отправляет сообщения в телеграмм."""
     try:
         bot.send_message(TELEGRAM_CHAT_ID, message)
         logging.debug('Удачно отправлено сообщение.')
@@ -93,7 +93,7 @@ def parse_status(homework):
         logging.error(f'Неизвестный статус - {homework["status"]}')
         raise UnknownHWStatus('Неизвестный статус домашней работы.')
     if not homework.get('homework_name'):
-        logging.error(f'В ответе нет ключа "homework_name".')
+        logging.error('В ответе нет ключа "homework_name".')
         raise ValueError('Нет статуса домашней работы.')
     homework_name = homework['homework_name']
     verdict = HOMEWORK_VERDICTS[homework['status']]
@@ -111,7 +111,7 @@ def main():
 
     while True:
         try:
-            answer = get_api_answer(timestamp - 40 * 86400)
+            answer = get_api_answer(timestamp - 30 * 86400)
             if not check_response(answer):
                 logging.error('Ответ API некорректный')
                 raise TypeError('Ответ API некорректный')
