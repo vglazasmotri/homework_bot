@@ -1,18 +1,10 @@
-class DotEnvError(Exception):
-    pass
-
-
 class EndpointUnreachableError(Exception):
-    pass
+    """Ошибка при обращении к API."""
 
 
 class UnknownHWStatus(Exception):
-    pass
-
-
-class TGMessageError(Exception):
-    pass
+    """Неизвестный статус домашней работы."""
 
 
 class NoneEnvValueError(Exception):
-    pass
+    """Нет одной или нескольких переменных окружения."""
