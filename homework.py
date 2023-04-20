@@ -75,6 +75,7 @@ def get_api_answer(timestamp: int) -> dict:
         raise exceptions.InvalidJSONTransform(message)
     return homework_json
 
+
 def check_response(response: dict) -> None:
     """Проверка ответа API на соответствие типам данных."""
     logging.debug(f'Ответ API: {response}.')
@@ -82,7 +83,7 @@ def check_response(response: dict) -> None:
         message = 'Некорректный ответ API: Отсутствует словарь с данными.'
         logging.error(message)
         raise TypeError(message)
-    
+
     homeworks = response.get('homeworks')
     if not isinstance(homeworks, list):
         message = 'Некорректный ответ API: Отсутствует список домашних работ.'
