@@ -8,3 +8,7 @@ class UnknownHWStatus(Exception):
 
 class NoneEnvValueError(Exception):
     """Нет одной или нескольких переменных окружения."""
+
+
+class InvalidJSONTransform(Exception):
+    """Сбой при переводе в формат json."""
