@@ -148,12 +148,6 @@ def main() -> None:
             if message != last_error:
                 last_error = message
                 send_message(bot, message)
-        except Exception as error:
-            message = 'Неизвестная ошибка!'
-            logging.error(f'{message} - {error}')
-            if message != last_error:
-                last_error = message
-                send_message(bot, message)
         finally:
             time.sleep(RETRY_PERIOD)
 
